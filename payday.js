@@ -1,10 +1,9 @@
-export default () => {
-  const date = new Date();
+function checkPayday (date) {
   
-  date.setDate(date.getMonth() === 11 ? 14 : 27);
+  date.setDate(date.getMonth() === 12 ? 14 : 27);
 
   if (new Date() > date) {
-    date.setMonth(date.getMonth() + 1);
+    date.setMonth(date.getMonth() + 1); 
   }
 
   if (date.getDay() === 0) {
@@ -17,3 +16,5 @@ export default () => {
 
   return [date, date === new Date()];
 };
+
+module.exports = checkPayday;
